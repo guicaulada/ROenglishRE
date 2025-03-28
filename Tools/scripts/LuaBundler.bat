@@ -36,7 +36,7 @@ if "%sub%"=="" (
 )
 
 :: Run the bundler
-./bin/lua.exe bundler.lua "%INPUT_PATH%"
+./bin/lua.exe lua/bundler.lua "%INPUT_PATH%"
 
 echo =================================================================
 pause 

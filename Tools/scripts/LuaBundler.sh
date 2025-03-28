@@ -35,7 +35,7 @@ else
 fi
 
 # Run the bundler
-./bin/lua bundler.lua "$INPUT_PATH"
+./bin/lua lua/bundler.lua "$INPUT_PATH"
 
 echo "================================================================="
 read -p "Press enter to exit..." 
