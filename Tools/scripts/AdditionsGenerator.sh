@@ -270,6 +270,8 @@ while true; do
                 echo "[7] Signboard_C.lub ${sys_c[7]}"
                 echo "[8] OngoingQuests/RecommendedQuests_C.lub ${sys_c[8]}"
                 echo "[9] Rune Folder (2023-08-02 and newer) ${sys_c[9]}"
+                echo "[10] Towninfo_C.lub ${sys_c[10]}"
+                echo "[11] mapInfo_C.lub (2019-06-05 and newer) ${sys_c[11]}"
                 echo "================================================================="
                 read -p "Now choose: " sys
 
@@ -294,12 +296,19 @@ while true; do
                         if [ "$date" -ge 20230802 ]; then
                             cp -rf "$sourceSystemPath/Rune/" "$destinationSystemPath/Rune/"
                         fi
-                        for ((i=1; i<=9; i++)); do
+                        cp -f "$sourceSystemPath/Towninfo_C.lub" "$destinationSystemPath/"
+                        if [ "$date" -ge 20190605 ]; then
+                            cp -f "$sourceSystemPath/mapinfo_C.lub" "$destinationSystemPath/"
+                        fi
+                        for ((i=1; i<=11; i++)); do
                             sys_c[$i]="[ Copied ]"
                             if [ $i -eq 2 ] && [ "$date" -lt 20221207 ]; then
                                 sys_c[$i]=""
                             fi
                             if [ $i -eq 9 ] && [ "$date" -lt 20230802 ]; then
+                                sys_c[$i]=""
+                            fi
+                            if [ $i -eq 11 ] && [ "$date" -lt 20190605 ]; then
                                 sys_c[$i]=""
                             fi
                         done
@@ -337,6 +346,16 @@ while true; do
                             sys_c[9]="[ Copied ]"
                         else
                             echo "These files is only supported by 2023-08-02 clients or newer!"
+                            read -p "Press Enter to continue..."
+                        fi
+                        ;;
+                    10) cp -f "$sourceSystemPath/Towninfo_C.lub" "$destinationSystemPath/" && sys_c[10]="[ Copied ]" ;;
+                    11) # mapInfo_C.lub (2019-06-05 and newer)
+                        if [ "$date" -ge 20190605 ]; then
+                            cp -f "$sourceSystemPath/mapinfo_C.lub" "$destinationSystemPath/"
+                            sys_c[11]="[ Copied ]"
+                        else
+                            echo "This file is only supported by 2019-06-05 clients or newer!"
                             read -p "Press Enter to continue..."
                         fi
                         ;;

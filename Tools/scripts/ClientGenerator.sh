@@ -56,11 +56,12 @@ while true; do
         echo "[15] 2023-01-18"
         echo "[16] 2023-08-02"
         echo "[17] 2023-09-20"
-        echo "[18] 2024-04-03"
-        echo "[19] 2024-05-02"
-        echo "[20] 2024-08-07"
-        echo "[21] 2024-10-16"
-        echo "[22] 2025-01-22"
+        echo "[18] 2024-03-11"
+        echo "[19] 2024-04-03"
+        echo "[20] 2024-05-02"
+        echo "[21] 2024-08-07"
+        echo "[22] 2024-10-16"
+        echo "[23] 2025-01-22"
         echo "================================================================="
         read -p "Please select the Client Date: " date
 
@@ -89,11 +90,12 @@ while true; do
             15) client="2023-01-18" ;;
             16) client="2023-08-02" ;;
             17) client="2023-09-20" ;;
-            18) client="2024-04-03" ;;
-            19) client="2024-05-02" ;;
-            20) client="2024-08-07" ;;
-            21) client="2024-10-16" ;;
-            22) client="2025-01-22" ;;
+            18) client="2024-03-11" ;;
+            19) client="2024-04-03" ;;
+            20) client="2024-05-02" ;;
+            21) client="2024-08-07" ;;
+            22) client="2024-10-16" ;;
+            23) client="2025-01-22" ;;
             *) continue ;;
         esac
         break
@@ -152,10 +154,11 @@ while true; do
                 16) copy_files "2023-01-18" "$type" ;;
                 17) copy_files "2023-08-02" "$type" ;;
                 18) copy_files "2023-09-20" "$type" ;;
-                19) copy_files "2024-04-03" "$type" ;;
-                20) copy_files "2024-05-02" "$type" ;;
-                21) copy_files "2024-08-07" "$type" ;;
-                22) copy_files "2024-10-16" "$type" ;;
+                19) copy_files "2024-03-11" "$type" ;;
+                20) copy_files "2024-04-03" "$type" ;;
+                21) copy_files "2024-05-02" "$type" ;;
+                22) copy_files "2024-08-07" "$type" ;;
+                23) copy_files "2024-10-16" "$type" ;;
             esac
         done
     fi
